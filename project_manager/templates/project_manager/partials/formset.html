@@ -1,0 +1,21 @@
+<form 
+method="post"
+hx-post="{% url 'update_tasks' projet.id %}"
+hx-target="#formset"
+hx-swap="outerHTML"
+>
+    {% csrf_token %}
+    {{ formset.management_form }}
+
+    {% for form in formset %}
+        <div class="card mb-3">
+            <div class="card-body">
+                {{ form }}
+            </div>
+        </div>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary">
+        <i class="bi bi-save"></i> Enregistrer les tâches
+    </button>
+</form>
