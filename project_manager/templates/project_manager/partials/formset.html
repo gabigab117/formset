@@ -1,8 +1,11 @@
+<!-- innerHTML : remplace le CONTENU de #formset (garde la div, remplace le <form>)
+     outerHTML : remplacerait la div #formset elle-même (on perdrait le conteneur)
+     Ici innerHTML est correct car on veut garder la <div id="formset"> du template parent -->
 <form 
 method="post"
 hx-post="{% url 'update_tasks' projet.id %}"
 hx-target="#formset"
-hx-swap="outerHTML"
+hx-swap="innerHTML"
 >
     {% csrf_token %}
     {{ formset.management_form }}
