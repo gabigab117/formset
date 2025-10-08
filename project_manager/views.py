@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from .models import Projet, Task
+from .models import Projet
 from .forms import TaskFormSet
 
 
