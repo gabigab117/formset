@@ -3,7 +3,7 @@
      Ici innerHTML est correct car on veut garder la <div id="formset"> du template parent -->
 <form 
 method="post"
-hx-post="{% url 'update_tasks' projet.id %}"
+hx-post="{% url 'projet_detail' projet.id %}"
 hx-target="#formset"
 hx-swap="innerHTML"
 >
