@@ -20,7 +20,8 @@ def update_tasks(request,pk):
         formset = TaskFormSet(request.POST, instance=projet)
         if formset.is_valid():
             formset.save()
-            
+    
+    # Recharge le formset depuis la base de données pour refléter les changements
     formset = TaskFormSet(instance=projet)
 
     return render(request, 'project_manager/partials/formset.html', {'projet': projet, 'formset': formset})
