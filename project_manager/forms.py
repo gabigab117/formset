@@ -1,8 +1,5 @@
-from .models import Task
-from django.forms import modelformset_factory
+from .models import Task, Projet
+from django.forms import inlineformset_factory
 
 
-TaskFormSet = modelformset_factory(Task, 
-                                   fields=('titre', 'complete'),
-                                   extra=0,
-                                   can_delete=True)
+TaskFormSet = inlineformset_factory(Projet, Task, fields=('titre', 'complete'), extra=1, can_delete=True)
