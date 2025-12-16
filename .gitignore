@@ -2,3 +2,5 @@
 # pyc etc
 *.pyc
 __pycache__/
+# sqlite database files
+*.sqlite3
